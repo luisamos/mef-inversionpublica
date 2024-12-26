@@ -1,0 +1,11 @@
+<svg width="51" height="47" viewBox="0 0 51 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4854 33H1.94319L8.31373 24.0812L8.7289 23.5L8.31373 22.9188L1.94319 14H15.4854L22.2711 23.5L15.4854 33Z" stroke="#BDD2E9" stroke-width="2"/>
+<path d="M29.4854 33H15.9432L22.3137 24.0812L22.7289 23.5L22.3137 22.9188L15.9432 14H29.4854L36.2711 23.5L29.4854 33Z" stroke="#BDD2E9" stroke-width="2"/>
+<path d="M42.9845 33H29.9432L36.3137 24.0812L36.7289 23.5L36.3137 22.9188L29.9432 14H42.9845L49.7702 23.5L42.9845 33Z" stroke="#BDD2E9" stroke-width="2"/>
+<circle cx="10" cy="4" r="3" stroke="#BDD2E9" stroke-width="2"/>
+<line x1="10" y1="13" x2="10" y2="7" stroke="#BDD2E9" stroke-width="2"/>
+<circle cx="38.5" cy="4" r="3" stroke="#BDD2E9" stroke-width="2"/>
+<line x1="38.5" y1="13" x2="38.5" y2="7" stroke="#BDD2E9" stroke-width="2"/>
+<path d="M22 43C22 41.3431 23.3431 40 25 40C26.6569 40 28 41.3431 28 43C28 44.6569 26.6569 46 25 46C23.3431 46 22 44.6569 22 43Z" stroke="#BDD2E9" stroke-width="2"/>
+<line x1="25" y1="34" x2="25" y2="40" stroke="#BDD2E9" stroke-width="2"/>
+</svg>

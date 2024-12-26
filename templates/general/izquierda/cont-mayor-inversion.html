@@ -1,0 +1,12 @@
+{% macro ContBar(i)%}
+<div id="BarCont{{i}}" style="width:234px;min-height: 324px;    margin-bottom: 8px;
+margin-right: 10px;">
+    <div class="contentTitleBar">
+        <div id="titleBar{{i}}" class="stitleBar"></div>
+    </div>
+    <div id="chartBar{{i}}" style="width:234px;height: 175px; "></div>
+    <div style="height: 90px;width: 234px; ">
+        <div id="footerBar{{i}}"></div>
+    </div>
+</div>
+{% endmacro %}

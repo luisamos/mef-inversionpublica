@@ -1,0 +1,21 @@
+
+{% from "presidencia/left/content-anio-actual.html" import ListaT%} 
+{% for i in ["pr-n"] %} {{ListaT(i,base)}} 
+{% endfor %}
+
+{% from "presidencia/left/content-anio-actual.html" import ListaT%} 
+{% for i in ["pr-s"] %} {{ListaT(i,base)}} 
+{% endfor %}
+
+{% from "presidencia/left/content-censo.html" import ListaT%} 
+{% for i in ["cr-i"] %} {{ListaT(i)}} 
+{% endfor %}
+
+{% from "presidencia/left/content-censo.html" import ListaT%} 
+{% for i in ["cr-a"] %} {{ListaT(i)}} 
+{% endfor %}
+
+{% from "presidencia/left/content-censo.html" import ListaT%} 
+{% for i in ["cr-s"] %} {{ListaT(i)}} 
+{% endfor %}
+

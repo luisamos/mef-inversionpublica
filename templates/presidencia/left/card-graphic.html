@@ -1,0 +1,30 @@
+{% macro ContBarT(j,i)%}
+<div id="BarContT{{j}}{{i}}" style="width:180px;height: 152px;border:1px solid #BDBDBD;border-radius: 6px;">
+    <div class="contentTitleBar" style="min-height: 26px;">
+        <div id="titleBarT{{j}}{{i}}"style="height:20px;padding:4px " class="stitleBar-t"></div>
+    </div>
+    <div id="chartBarT{{j}}{{i}}" style="min-width:180px;min-height: 74px; "></div>
+    <div style="display: flex;width: 180px;height: 152px;">
+        <div style="height: 48px;width: 118px; ">
+            <div id="footerBarT{{j}}{{i}}" style="line-height: 0px;"></div>
+        </div>
+        <div style="height: 48px;width:62px;    display: flex;
+        justify-content: center;
+        align-items: center; ">
+            <div  style="line-height: 0px;text-align: center;">
+                <div id="footerBarTP{{j}}{{i}}" style=" filter: alpha(opacity=50);    margin-top: 4.5px;height: 21px;width: 42px;background: #333333;color: azure;border-radius: 6px;
+                justify-content: center;
+                align-items: center;
+                display: flex;">
+                    3
+                </div>
+                <span style="font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 8px;
+                line-height: 10px;">Proyectos</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
