@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Inversión Pública</title>
+    <!-- <link rel="stylesheet" href="/static/css/index.css"> -->
+    <!-- <link rel="stylesheet" href="/static/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="{{base + url_for('static', filename='css/index.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+</head>
+
+<!-- <body onload="onload('{{ubigeo|safe}}');"> -->
+<body onload="">
+    <div id="a3" class="a3">
+        <div class="izquierda">
+            <div style="padding-left: 24px; width: 744px; height: 100%;">
+                <!-- header -->
+                {% include '/filter/left/header.html' %}
+                <!-- ubigeo -->
+                {% include '/filter/left/ubigeo.html' %}
+                <!-- filtros -->
+                <div style="position: absolute;z-index: 1;width: 400px;top: 235px;height: 15px;left: 35px;font-family: Calibri;font-style: normal;font-weight: normal;font-size: 24px;line-height: 10px;display: flex;align-items: center;background-color:white;text-align: center;color: #828282;">
+                    <p style="margin-left: 20px;"> Configurar búsqueda de información:</p>
+                </div>
+                
+                {% include '/filter/left/filtros.html' %}
+                <!-- Cuadro total -->
+                {% include '/filter/left/cuadro-total.html' %}
+                <!-- top5 -->
+                {% include '/filter/left/top5.html' %}
+                <!-- contenedor graficos barra -->
+                {% include '/filter/left/mayor-inversion.html' %}
+                <!-- footer -->
+                {% include '/filter/left/footer.html' %}
+            </div>
+        </div>
+        <div class="derecha">
+            <div style="padding-left: 23px; width: 1506px;">
+                <!-- acumulado historico -->
+                {% include '/filter/right/acumulado-historico.html' %}
+                <!-- ejecucion por item -->
+                {% include '/filter/right/ejecucion-actual.html' %}
+            </div>
+        </div>
+
+        <!-- tooltip -->
+        <div data-html2canvas-ignore class="tooltip no-print">
+            <!--<div id="pdf"><img src="{{base + url_for('static', filename='img/export.svg')}}" alt=""></div>-->
+            <div id="print"><img src="{{base + url_for('static', filename='img/print.svg')}}" alt=""></div>
+            <!-- <div style="display:none;"><img src="/static/img/share.svg" alt=""></div> -->
+        </div>
+    </div>
+
+</body>
+<!-- Bloque Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.0/highcharts.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.0/highcharts-more.min.js"></script>
+<!-- <script src="{{base + url_for('static', filename='js/data.js')}}"></script> -->
+<script type="module" src="{{base + url_for('static', filename='js/main.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/html2canvas.min.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/jspdf.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/print.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/textFit.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+</html>

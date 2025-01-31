@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.a3 {
+    width: 2330px;
+    height: 1620px;
+    display: flex;
+}
+
+.izquierda {
+    width: 776px;
+    border-right: 2px dotted #BDBDBD;
+}
+
+.derecha {
+    width: 1553px;
+}
+
+.centerv {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.titleUbigeo {
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    color: #27A5CE;
+}
+
+.textUbigeo {
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+}
+
+.filtro-select {
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    height: 40px !important;
+    width: 304px;
+}
+
+.filtro-select-f{
+    font-family: "Montserrat";
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    height: 40px !important;
+    width: 245px;
+}
+
+.filtro-select-a{
+    font-family: "Montserrat";
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    height: 20px !important;
+    width: 70px;
+}
+
+.filtro-select-ejecucion {
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    height: 38px !important;
+    color: #333333;
+    width: 246px;
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.field:not(:last-child) {
+    margin-bottom: .1rem;
+}
+
+.contentTitleBar {
+    margin: 6px 8px 6px 8px;
+}
+
+.stitleBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Montserrat";
+    height: 59px;
+    font-weight: 900;
+    color: black;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.stitleBar-t {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Montserrat";
+    height: 45px;
+    font-weight: 900;
+    color: black;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.label {
+    color: #193D74 !important;
+}
+
+.radio {
+    font-size: 18px;
+}
+
+.ContentBar {
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+}
+
+.contentEjecucion {
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+}
+
+.contentUbigeo {
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+}
+
+.contentPie {
+    background-color: #F2F2F2;
+    border-radius: 6px;
+}
+
+.titlePie {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    min-height: 60px;
+    color: #193D74;
+}
+
+.titleBar1 {
+    text-align: center;
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: #193D74;
+}
+
+.tooltipEjecucion {
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+.titleAll {
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    color: #193D74;
+}
+
+.titleCategoria {
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    color: #193D74;
+}
+
+.borderBar {
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.tooltip {
+    position: fixed;
+    margin-top: 267px;
+    width: 48px;
+    min-height: 96px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.32);
+}
+
+.tooltip div {
+    width: 48px;
+    min-height: 48px;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.tooltip div:hover {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    background-color: #E0E0E0;
+}
+
+@media print {
+    @page {
+        size: A2 landscape;
+        margin: 0;
+    }
+    
+    body {
+        margin: 20mm;
+    }
+
+    .no-print {
+        display: none;
+    }
+}
+

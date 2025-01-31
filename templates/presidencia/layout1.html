@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Avance en Ejecución de Proyectos</title>
+    <!-- <link rel="stylesheet" href="/static/css/index.css"> -->
+    <!-- <link rel="stylesheet" href="/static/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="{{base + url_for('static', filename='css/presidencia/index.css')}}">
+    <link rel="stylesheet" href="{{base + url_for('static', filename='css/presidencia/search.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+</head>
+
+<body onload="">
+    {% include '/presidencia/left/search.html' %}
+    <div id="print3D">
+    <div id="page1" name="a3" class="displayblur" style="margin-top: 28px; margin-bottom: 20px;">
+        {% include '/presidencia/left/loading.html' %}
+        <div class="izquierda">
+            <div style="width: 842px; min-height: 1191px; border-bottom: 1px dotted #C4C4C4;">
+                 <!-- header -->
+                 {% include '/presidencia/left/header.html' %}
+                 {% include '/presidencia/left/content.html' %}
+                 {% include '/presidencia/left/footer.html' %}
+            </div>
+        </div>
+    </div><pagebreak/>
+    <div id="page2" name="a3" class="displayblur">
+        <div class="derecha">
+            <div style="position: relative; min-width: 842px;min-height: 1191px;">
+                {% include '/presidencia/left/header-censo.html' %}
+                {% include '/presidencia/left/content-right.html' %}
+                {% include '/presidencia/left/footer-right.html' %}
+            </div>
+        </div>
+    </div>
+    </div>
+        <!-- tooltip -->
+   <div data-html2canvas-ignore class="tooltip no-print" style="z-index: 900;top: 0%;
+   right: 0%;">
+            <!--<div id="pdf"><img style="height: 22.5px;" src="{{base + url_for('static', filename='img/export.svg')}}" alt=""></div>-->
+            <div id="print"><img style="height: 22.5px;" src="{{base + url_for('static', filename='img/print.svg')}}" alt=""></div>
+        </div>
+    </div>
+
+</body>
+<!-- Bloque Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.0/highcharts.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.0/highcharts-more.min.js"></script>
+<!-- <script src="{{base + url_for('static', filename='js/data.js')}}"></script> -->
+<script type="module" src="{{base + url_for('static', filename='js/main-pr.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/html2canvas.min.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/jspdf.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/print-pr.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/textFit.min.js')}}"></script>
+
+<script src="{{base + url_for('static', filename='js/fuse.min.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/ubigeo.js')}}"></script>
+
+<script>
+    //Función para completar el buscador de capas
+    const $listUbigeo = document.getElementById('listUbigeo');
+    const $filtroUbigeo = document.getElementById('filtroUbigeo');
+    const optionsFuse = {
+        shouldSort: true,
+        threshold: 0.3,
+        isCaseSensitive: false,
+        minMatchCharLength: 2,
+        findAllMatches: true,
+        keys: ['i', 'nombre', 'extra']
+    };
+    const fuse = new Fuse(UBIGEO, optionsFuse);
+
+    $filtroUbigeo.addEventListener('input', function () {
+
+        let searchUbigeo = fuse.search($filtroUbigeo.value, { limit: 15 });
+        searchUbigeo.sort((a, b) => (a.i > b.i) ? 1 : (a.i === b.i) ? 0 : -1);
+        $listUbigeo.innerHTML = '';
+        if ($filtroUbigeo.value.length < 1) {
+            $listUbigeo.classList.remove('displayBlock');
+            return;
+        }
+
+        $listUbigeo.classList.add('displayBlock');
+        searchUbigeo.forEach(function (el) {
+            if (el.codigo.toString() !== '00')
+                $listUbigeo.insertAdjacentHTML('beforeend', `
+            <div class="filtro__result" onclick="setDataSearch('${el.nombre}','${el.codigo}');">
+                <span style = "font-weight: bold;" class="nombre__localidad">${el.nombre}</span>
+                <span class="tipo__localidad">${el.tipo}</span>
+            </div>
+        `);
+            else
+                $listUbigeo.insertAdjacentHTML('beforeend', `<li class="li_lnkUbigeo">
+            <span onclick="setLimitLayer('${el.cod_dist.toString()}', '${el.nom_dist}')">${el.nom_dist}</span>
+        </li>`);
+        });
+
+        if (searchUbigeo.length === 0) {
+            $listUbigeo.insertAdjacentHTML('beforeend', `<span> No existen coincidencias para su búsqueda</span>`);
+            return;
+        }
+    });
+
+   
+</script>
+</html>

@@ -1,0 +1,12 @@
+# Ignorar carpetas innecesarias
+__pycache__
+venv
+inversionpublica-master.code-workspace
+docker-compose.prod.yml
+docker-compose.yml
+Dockerfile.dev
+Dockerfile.prod
+.git
+.gitignore
+
+

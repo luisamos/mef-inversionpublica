@@ -1,0 +1,27 @@
+<div style="height: 80px;" class="header-flex-gap">
+    <img style="height: 40px;" src="{{base + url_for('static', filename='img/presidencia/presidencia.svg')}}">
+    <img  style="height: 49px;" src="{{base + url_for('static', filename='img/presidencia/pumche.svg')}}">
+    <img style="height: 54px;" src="{{base + url_for('static', filename='img/presidencia/bicentenario.svg')}}">
+</div>
+
+<div style="height:24px;text-align: center;">
+    <h1>Avance en Ejecución de Proyectos</h1>
+</div>
+
+<div class="territorio">
+    <div style="margin: 0 auto; width: 732px;height: 150px;
+    margin-top: 12px;">
+  <div style="position: absolute;color:#787878;
+  min-width: 174px;
+  min-height: 20px;
+  top: -10px;
+  left: 335px;
+   background-color: white; margin: 0;font-family: 'Calibri';
+  font-style: normal;
+  font-weight: 400;font-size: 16px;display: flex; align-items: center; justify-content: center;
+  ">Territorio seleccionado</div>
+    {% include '/presidencia/left/ubigeo.html' %}
+    {% include '/presidencia/left/ministerio.html' %}
+    </div>
+
+</div>

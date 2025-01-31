@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listas con Drag and Drop || SortableJS</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{base + url_for('static', filename='css/estilos8.css')}}">
+  
+</head>
+<body>
+    <!-- Drag and Drop con DataTables y SortableJS -->
+    <div class="contenedor">
+        <div class="contenedor-lista">
+            <table id="tabla-datos" class="tabla-datos">
+                <thead>
+                    <tr>
+                        <th>N*</th>
+                        <th>Deshabilitar todos</th>
+                        <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+                        <th>Habilitar todos</th>
+                        <th>Columna</th>
+                        <th>Alias</th>
+                        <th>Incluir en Url de Reporte</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="handle fixed-column">1</td>
+                        <td class="handle">Deshabilitar</td>
+                        <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+                        <td>Habilitar</td>
+                        <td>NOM_PRO</td>
+                        <td><input type="text" placeholder="NOM_PRO"></td>
+                        <td class="incluido"><input type="checkbox">&nbsp;&nbsp;&nbsp;Incluido</td>
+                    </tr>
+                    <tr>
+                        <td class="handle fixed-column">2</td>
+                        <td class="handle">Deshabilitar</td>
+                        <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+                        <td>Habilitar</td>
+                        <td>NOM_DEP</td>
+                        <td><input type="text" placeholder="NOM_DEP"></td>
+                        <td class="incluido"><input type="checkbox">&nbsp;&nbsp;&nbsp;Incluido</td>
+                    </tr>
+                    <tr>
+                        <td class="handle fixed-column">3</td>
+                        <td class="handle">Deshabilitar</td>
+                        <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+                        <td>Habilitar</td>
+                        <td>NOM_DIST</td>
+                        <td><input type="text" placeholder="NOM_DIST"></td>
+                        <td class="incluido"><input type="checkbox">&nbsp;&nbsp;&nbsp;Incluido</td>
+                    </tr>
+                    <tr>
+                        <td class="handle fixed-column">4</td>
+                        <td class="handle">Deshabilitar</td>
+                        <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+                        <td>Habilitar</td>
+                        <td>FUENTE</td>
+                        <td><input type="text" name="email" placeholder="FUENTE"></td>
+                        <td class=" incluido"><input type="checkbox">&nbsp;&nbsp;&nbsp;Incluido</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.13.0/Sortable.min.js"></script>
+    <script>
+        new Sortable(document.getElementById('tabla-datos').getElementsByTagName('tbody')[0], {
+            handle: '.handle',
+            animation: 150,
+            onEnd: function(evt) {
+                updateRowNumbers();
+            }
+        });
+
+        function updateRowNumbers() {
+            var rows = document.getElementById('tabla-datos').getElementsByTagName('tbody')[0].rows;
+            for (var i = 0; i < rows.length; i++) {
+                rows[i].cells[0].textContent = (i + 1);
+            }
+        }
+
+        updateRowNumbers();
+    </script>
+</body>
+</html>

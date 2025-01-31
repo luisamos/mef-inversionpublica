@@ -1,0 +1,27 @@
+# base image
+#FROM ghcr.io/geo-peru/tools/gunicorn-python:v3.8.12-1.1.0 AS base
+FROM ghcr.io/luisamos/gunicorn-static:latest-24012025 AS base
+WORKDIR $APP_HOME
+COPY --chown=appuser:appuser requirements.txt .
+RUN pip install --user -r requirements.txt
+
+USER root
+# Instala locales
+RUN apt-get update && apt-get install -y locales
+
+# Crea el archivo /etc/locale.gen manualmente
+RUN echo "es_ES.UTF-8 UTF-8" > /etc/locale.gen && \
+    locale-gen
+
+# Configura el locale por defecto
+ENV LANG=es_ES.UTF-8
+ENV LANGUAGE=es_ES:es
+ENV LC_ALL=es_ES.UTF-8
+
+FROM base AS production
+WORKDIR $APP_HOME
+COPY --chown=appuser:appuser . .
+USER appuser
+# run server
+WORKDIR ${APP_DPLY}
+CMD ["./entrypoint.sh"]

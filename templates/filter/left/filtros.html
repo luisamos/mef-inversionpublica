@@ -1,0 +1,46 @@
+<div style="width: 744px;height: 183px;border: 1px solid #E0E0E0;box-sizing: border-box;border-radius: 4px;margin-bottom: 0px;">
+
+    <div style="margin-left: 91px; margin-top: 10px; width: 100%;height: 141px;">
+        <div style="display: flex; align-items: center; height:47px;">
+            <div class="field-label" style="min-width:242px; font-weight: bold;font-size: 24px; color: #193D74;">
+                <label class="label">Información de:</label>
+            </div>
+            <label class="radio">
+                <input type="checkbox" name="chkAct" id="chkAct" onchange="getInfo(ubigeo);">
+                Actividades
+            </label>
+            <label class="radio">
+                <input type="checkbox" name="chkPry" id="chkPry" checked  onchange="getInfo(ubigeo);">
+                Proyectos
+            </label>
+        </div>
+
+        <div style="display: flex; align-items: center; height:47px;">
+            <div class="field-label is-normal" style="min-width:242px;font-weight: bold;font-size: 24px; color: #193D74;">
+                <label class="label">¿En qué se gasta?</label>
+            </div>
+            <div class="select is-small" style="font-size: 18px;">
+                <select id='tipoGrafico' class="filtro-select" onchange="window.setData(this,'{{ubigeo|safe}}');">
+                    <option value="f">Funciones</option>
+                    <!--<option value="s">Sector</option>-->
+                    <option value="c">Categoría Presupuestal</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; height:47px;">
+            <div class="field-label is-normal" style="min-width:242px;font-weight: bold;font-size: 24px; color:#193D74;">
+                <label class="label">Nivel de Gobierno:</label>
+            </div>
+
+            <div class="select is-small" style="font-size: 18px;">
+                <select id='tipoGobierno' class="filtro-select" onchange="getInfo('{{ubigeo|safe}}');">
+                    <option value="E">Gobierno Nacional</option>
+                    <option value="R">Gobierno Regional</option>
+                    <option value="M">Gobierno Local</option> 
+                </select>
+            </div>
+        </div>
+
+    </div>
+</div>

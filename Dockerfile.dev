@@ -1,0 +1,38 @@
+# Usar una imagen base con Python
+FROM python:3.11-slim
+
+# Crear el usuario y el grupo appuser
+RUN groupadd -r appuser && useradd -r -g appuser appuser
+
+# Establecer el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Instala locales
+RUN apt-get update && apt-get install -y locales
+
+# Crea el archivo /etc/locale.gen manualmente
+RUN echo "es_ES.UTF-8 UTF-8" > /etc/locale.gen && \
+    locale-gen
+
+# Configura el locale por defecto
+ENV LANG=es_ES.UTF-8
+ENV LANGUAGE=es_ES:es
+ENV LC_ALL=es_ES.UTF-8
+
+# Copiar el archivo requirements.txt y establecer el propietario
+COPY --chown=appuser:appuser requirements.txt .
+
+# Instalar las dependencias de Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar el resto del código (incluyendo app.py) al contenedor
+COPY --chown=appuser:appuser . .
+
+# Cambiar al usuario appuser
+USER appuser
+
+# Exponer el puerto 5000
+EXPOSE 5000
+
+# Comando para iniciar Gunicorn con tu aplicación Flask
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]

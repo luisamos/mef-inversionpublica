@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Avance en Ejecución de Proyectos</title>
+    <!-- <link rel="stylesheet" href="/static/css/index.css"> -->
+    <!-- <link rel="stylesheet" href="/static/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="{{base + url_for('static', filename='css/presidencia/index.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+</head>
+
+<body onload="">
+    <div id="a3" class="" style="margin-bottom: 20px;">
+        {% include '/presidencia/left/loading.html' %}
+        <div class="izquierda">
+            <div style="width: 842px; min-height: 1191px; border-bottom: 1px dotted #C4C4C4;">
+                 <!-- header -->
+                 {% include '/presidencia/left/header.html' %}
+                 {% include '/presidencia/left/content.html' %}
+                 {% include '/presidencia/left/footer.html' %}
+            </div>
+        </div>
+    </div>
+    <div id="a3" class="">
+        <div class="derecha">
+            <div style="position: relative; min-width: 842px;min-height: 1191px;">
+                {% include '/presidencia/left/header-censo.html' %}
+                {% include '/presidencia/left/content-right.html' %}
+                {% include '/presidencia/left/footer-right.html' %}
+            </div>
+        </div>
+    </div>
+
+        <!-- tooltip -->
+        <div data-html2canvas-ignore class="tooltip no-print">
+            <!--<div id="pdf"><img src="{{base + url_for('static', filename='img/export.svg')}}" alt=""></div>-->
+            <div id="print"><img src="{{base + url_for('static', filename='img/print.svg')}}" alt=""></div>
+        </div>
+    </div>
+
+</body>
+<!-- Bloque Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.0/highcharts.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.0/highcharts-more.min.js"></script>
+<!-- <script src="{{base + url_for('static', filename='js/data.js')}}"></script> -->
+<script type="module" src="{{base + url_for('static', filename='js/main-pr.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/html2canvas.min.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/jspdf.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/print.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/textFit.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+</html>

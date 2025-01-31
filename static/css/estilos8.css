@@ -1,0 +1,125 @@
+body {
+    background-color: #808080;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contenedor-lista {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tabla-datos {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px 5px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+
+.tabla-datos th,
+.tabla-datos td {
+    padding: 12px;
+    text-align: center;
+}
+
+.tabla-datos th {
+    background-color: white;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tabla-datos tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+.handle {
+    cursor: grab;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #3b83bd;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #3b83bd;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+    margin: 10px 20px;
+
+}
+
+td.incluido {
+    font-size: 18px;
+    font-family: verdana, arial, helvetica;
+    line-height: 30px;
+ 
+    
+   
+ 
+    
+    
+}
+
+td.incluido input[type="checkbox"] {
+    /* Doble-tamaño Checkboxes */
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari y Chrome */
+    -o-transform: scale(2); /* Opera */
+    padding: 10px;
+    margin-right: 5px; /* Ajusta el margen derecho según tu preferencia */
+}

@@ -1,0 +1,25 @@
+<div class="header-geo" 
+style="padding: 15 0 0 15;
+display: flex;justify-content: center; align-items: center; flex-wrap: nowrap;place-content: space-around;  height: 68px;">
+    <img style="height: 40px;" src="{{base + url_for('static', filename='img/presidencia/logo1.svg')}}">
+<section class="filter__ubigeo" style="position: relative;">
+    <div class="">
+        <input class="ubigeo__text" type="text" id="filtroUbigeo" 
+        placeholder="Departamento, provincia o distrito"
+            autocomplete="off" style="border-radius:5px;">
+
+        <div class="ubigeo__image" style="position: absolute; border-radius: 0 4px 4px 0;  top: 1.5px;right: 2.5px">
+
+            <img src="{{base + url_for('static', filename='img/presidencia/search-white.svg')}}" alt="Filtro de ubigeo">
+        </div>
+    </div>
+    <ul id="listUbigeo" class="ubigeo__list" style="padding-left: 0px;position: absolute; top:34px;width: 297px;"></ul>
+</section>
+
+</div>
+
+<div class="loader__print" bis_skin_checked="1">
+    <div class="line" bis_skin_checked="1"></div>
+    <div class="subline inc" bis_skin_checked="1"></div>
+    <div class="subline dec" bis_skin_checked="1"></div>
+</div>

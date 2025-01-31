@@ -1,0 +1,155 @@
+.displayBlock {
+            display: block !important;
+        }
+
+        .filter__ubigeo {
+            z-index: 600;
+            width: 2vw;
+            min-width: 300px;
+      
+        }
+
+        .filter__ubigeo>div:first-child {
+            display: grid;
+            grid-template-columns: 1fr 1px;
+            grid-template-rows: 32px;
+            gap: 0;
+        }
+
+        .ubigeo__list {
+            background-color: #FFF;
+            grid-column: col1-start / col2-end;
+            font-size: 14px;
+            margin-block-start: 0;
+            margin-inline-end: 0;
+            border: 1px solid transparent;
+            font-size: 12px;
+            line-height: 25px;
+            list-style-type: none;
+            margin-top: 0px;
+            display: none;
+            user-select: none;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        .filter__ubigeo>div:first-child {
+            display: grid;
+            grid-template-columns: 1fr 1px;
+            grid-template-rows: 32px;
+            gap: 0;
+        }
+
+        .ubigeo__image {
+           
+            float: right;
+            right: 2px;
+            top: 1px;
+            width: 28px;
+            height: 31px;
+            background-color: #828282;
+            text-align: center;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .ubigeo__text {
+            border: 1px solid #969696;
+            background-color: #ffffff;
+            float: left;
+            padding-left: 5px;
+            margin-bottom: 0;
+            height: 30px;
+            font-size: 14px;
+            outline: none;
+            color: #333333;
+            font-size: 12px;
+            text-transform: uppercase;
+            background-position: 10px center;
+            background-repeat: no-repeat;
+        }
+
+        .ubigeo__text:focus {
+            outline: 3px solid #F9C645;
+        }
+
+        .ubigeo__list li span.active,
+        .ubigeo__list li span.active:hover,
+        .ubigeo__list li span:hover {
+            color: #FFF;
+            background: #F9C645;
+        }
+
+        .filtro__result {
+            padding: 2px 8px;
+            height: 32px;
+            line-height: 16px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .filtro__result:hover {
+            background-color: #F9C645;
+        }
+        .loader__print {
+            position: absolute;
+            width: 100vw;
+            height: 5px;
+            overflow-x: hidden;
+            top: 68px;
+            z-index: 600;
+            display: none;
+           
+        }
+        .line {
+            position: absolute;
+            opacity: 0.4;
+            background: var(--color-hover);
+            width: 150%;
+            height: 5px;
+        }
+   
+        .subline {
+            position: absolute;
+            background: var(--color-hover);
+            height: 5px;
+        }
+        
+        .inc {
+            animation: increase 2s infinite;
+        }
+        
+        .dec {
+            animation: decrease 2s 0.5s infinite;
+        }
+        
+@keyframes increase {
+    from {
+        left: -5%;
+        width: 5%;
+    }
+
+    to {
+        left: 130%;
+        width: 100%;
+    }
+}
+
+@keyframes decrease {
+    from {
+        left: -80%;
+        width: 80%;
+    }
+
+    to {
+        left: 110%;
+        width: 10%;
+    }
+}

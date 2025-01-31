@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inversión Pública</title>
+    <!-- <link rel="stylesheet" href="/static/css/index.css"> -->
+    <!-- <link rel="stylesheet" href="/static/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="{{base + url_for('static', filename='css/index.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body onload="onload('{{ubigeo|safe}}');">
+    <div id="a3" class="a3">
+        <div class="izquierda">
+            <div style="padding-left: 24px; width: 744px; height: 100%;">
+                <!-- header -->
+                {% include '/general/izquierda/header.html' %}
+                <!-- ubigeo -->
+                {% include '/general/izquierda/ubigeo.html' %}
+                <!-- filtros -->
+                 
+                <div style="margin-left: 40px; min-height: 22px;">
+                    <span style="font-family: Calibri;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 20px;            
+                    color: #000000;
+                    ">Configurar búsqueda de información:</span>
+                </div>            
+                {% include '/general/izquierda/filtros.html' %}
+                <!-- top5 -->
+                {% include '/general/izquierda/top5.html' %}
+                <!-- contenedor graficos barra -->
+                {% include '/general/izquierda/mayor-inversion.html' %}
+                <!-- footer -->
+                
+            </div>
+        </div>
+        <div class="derecha">
+            <div style="padding-left: 23px; width: 1506px;">
+                <!-- acumulado historico -->
+                {% include '/general/derecha/acumulado-historico.html' %}
+                <!-- ejecucion por item -->
+                {% include '/general/derecha/ejecucion-actual.html' %}
+
+                {% include '/general/izquierda/footer.html' %}
+            </div>
+        </div>
+
+        <!-- tooltip -->
+        <div data-html2canvas-ignore class="tooltip no-print">
+            <div id="pdf" style="display: none;"><img src="{{base + url_for('static', filename='img/export.svg')}}" alt=""></div>
+            <div id="print"><img src="{{base + url_for('static', filename='img/print.svg')}}" alt=""></div>
+            <div><img src="{{base + url_for('static', filename='img/share.svg')}}" alt=""></div>
+        </div>
+    </div>
+
+</body>
+<!-- Bloque Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.0/highcharts.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.0/highcharts-more.min.js"></script>
+<script src="{{base + url_for('static', filename='js/data.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/html2canvas.min.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/jspdf.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/print.js')}}"></script>
+<script src="{{base + url_for('static', filename='js/textFit.min.js')}}"></script>
+</html>

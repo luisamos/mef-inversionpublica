@@ -1,0 +1,367 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body {
+    margin: 0 0 0 0;
+    max-width: 1440px;
+}
+
+.nav-filtro {
+    min-width: 292px;
+    max-width: 292px;
+ 
+    background: #333333;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.select-filtro {
+    width: 248px;
+    height: 52px;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    background: #F2F2F2;
+    border-radius: 8px;
+}
+
+.input-filtro {
+    padding-top: 16px;
+    line-height: 20px;
+}
+
+.btn-actualizar {
+    margin-top: 24px;
+    width: 248px;
+    height: 52px;
+    background: #0055AA;
+    border: 1px solid #0055AA;
+    border-radius: 1px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: Roboto;
+}
+
+.header-main {
+    box-sizing: border-box;
+    width: 1440px;
+    height: 64px;
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    align-items: center;
+}
+
+.title-header {
+    padding-left: 200px;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #133363;
+
+}
+
+.header-content {
+    height: 72px;
+    width: 1148px;
+    left: 292px;
+    top: 64px;
+    border-radius: 0px;
+    background: #F1F3F6;
+    display: flex;
+    align-items: center;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #0055AA;
+
+}
+
+.content {
+    background: #EFEDED;
+    min-height: 1148px;
+
+}
+
+.contentUbigeo {
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+}
+
+.titleUbigeo {
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #133363;
+}
+
+.centerv {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.title-ubigeo {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #138BF8;
+
+}
+
+.btn-descarga {
+    background: #FFFFFF;
+    box-sizing: border-box;
+    border: 1px solid #0055AA;
+    border-radius: 1px;
+    color: #0055AA;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    height: 52px;
+    width: 216px;
+}
+
+.subtitle-grafico {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 17px;
+    color: #133363;
+
+}
+
+.title-gauge {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #133363;
+}
+
+.content-total{
+    min-height: 68px;
+    min-width: 260px;
+    margin-top: 4px;
+}
+
+.subtitle-gauge{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #333333;
+}
+
+
+.subtitle2-gauge{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333333;
+}
+
+svg > g[class^='raphael-group-'] g {
+    fill: none !important;
+}
+
+.title-circular{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+ 
+    text-align: center;
+    color: #333333;
+
+}
+
+.label-value{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.label-pim{
+    color: #FF6356;
+}
+.label-dev{
+    color: #90BD31;
+}
+
+.label-cer{
+    color: #4E6D0A;
+}
+
+.title-ind{
+    
+font-family: 'Calibri';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 22px;
+color: #333333;
+
+
+}
+
+.s-ind-desc{
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: uppercase;
+
+        color: #333333;
+
+}
+
+
+
+/* SEARCH GEOPERU */
+.displayBlock {
+    display: block !important;
+}
+.filter__ubigeo {
+    z-index: 600;
+    width: 2vw;
+    min-width:248px;
+    color: #333333;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.filter__ubigeo>div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1px;
+    grid-template-rows: 32px;
+    gap: 0;
+}
+
+.ubigeo__list {
+    background-color: #FFF;
+    grid-column: col1-start / col2-end;
+    font-size: 14px;
+    margin-block-start: 0;
+    margin-inline-end: 0;
+    border: 1px solid transparent;
+    font-size: 12px;
+    line-height: 25px;
+    list-style-type: none;
+    margin-top: 0px;
+    display: none;
+    user-select: none;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.filter__ubigeo>div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1px;
+    grid-template-rows: 32px;
+    gap: 0;
+}
+
+.ubigeo__image {
+   
+    float: right;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 31px;
+
+    text-align: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+
+.ubigeo__text {
+    border: 1px solid #969696;
+    background-color: #ffffff;
+    float: left;
+    padding-left: 5px;
+    margin-bottom: 0;
+    height: 48.2px;
+    font-size: 14px;
+    outline: none;
+    color: #333333;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+
+.ubigeo__text:focus {
+    outline: 3px solid #F9C645;
+}
+
+.ubigeo__list li span.active,
+.ubigeo__list li span.active:hover,
+.ubigeo__list li span:hover {
+    color: #FFF;
+    background: #F9C645;
+}
+
+.filtro__result {
+    padding: 2px 8px;
+    height: 32px;
+    line-height: 16px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.filtro__result:hover {
+    background-color: #F9C645;
+}
+
+
+.map-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .map-button i {
+    margin-right: 5px;
+  }
+
+  .leg-box:not(:first-child){
+    margin-top: 28px;
+  }
+
+  .leg-monto{
+    font-weight: 700;
+  }
